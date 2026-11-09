@@ -1,0 +1,270 @@
+/* Workspace screens. Public pages keep html.is-public and ignore this file. */
+
+html.is-admin {
+  color-scheme: light;
+  background: #f4f1ea;
+  color: #000c34;
+}
+
+html.is-admin body { background: #f4f1ea; }
+
+html.is-admin .admin-boot {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+html.is-admin .admin-boot p {
+  margin: 0;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid #e2e6ef;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+html.is-admin .login-shell { min-height: 100vh; background: #f4f1ea; }
+html.is-admin .login-card {
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0, 12, 52, 0.08);
+}
+html.is-admin .login-card input,
+html.is-admin .workspace-form-grid input,
+html.is-admin .workspace-form-grid select,
+html.is-admin .workspace-form-grid textarea,
+html.is-admin .invite-form input,
+html.is-admin .invite-form select,
+html.is-admin .workspace-row select {
+  font-size: 16px;
+  min-height: 48px;
+  border-radius: 8px;
+}
+html.is-admin .login-card .button,
+html.is-admin .workspace-form-actions .button,
+html.is-admin .invite-form .button,
+html.is-admin .row-action {
+  min-height: 44px;
+}
+html.is-admin .login-error { border-radius: 8px; }
+
+html.is-admin .dashboard-shell {
+  min-height: 100vh;
+  grid-template-columns: 260px minmax(0, 1fr);
+  background: #f4f1ea;
+}
+html.is-admin .dashboard-nav {
+  background: #000c34;
+  color: #fff;
+  padding: 28px 18px 22px;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  min-height: 100dvh;
+}
+html.is-admin .dashboard-nav .brand { width: 168px; margin: 0 8px 28px; }
+html.is-admin .dashboard-nav > span {
+  display: block;
+  margin: 0 12px 8px;
+  color: #9eb0ff;
+  letter-spacing: 0.16em;
+}
+html.is-admin .admin-role {
+  margin: 0 12px 22px;
+  color: #d5def5;
+  font-size: 13px;
+  font-weight: 700;
+}
+html.is-admin .dashboard-nav nav { display: grid; gap: 4px; }
+html.is-admin .dashboard-nav nav a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: transparent;
+  color: #d5def5;
+  font-size: 15px;
+  font-weight: 700;
+}
+html.is-admin .dashboard-nav nav a:hover,
+html.is-admin .dashboard-nav nav a:focus-visible { background: #14285a; color: #fff; }
+html.is-admin .dashboard-nav > button {
+  margin-top: auto;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  background: transparent;
+  color: #d5def5;
+  text-align: start;
+  font-weight: 700;
+  cursor: pointer;
+}
+html.is-admin .dashboard-main {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+  padding: 28px clamp(18px, 3vw, 40px) 80px;
+}
+html.is-admin .dashboard-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e2e6ef;
+}
+html.is-admin .dashboard-top p {
+  margin: 0;
+  color: #0000ff;
+  font: 700 11px/1 "DM Sans", Arial, sans-serif;
+  letter-spacing: 0.14em;
+}
+html.is-admin .dashboard-top h1 {
+  margin: 8px 0 0;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.03em;
+}
+html.is-admin .admin-menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #d5dce8;
+  border-radius: 8px;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+html.is-admin .admin-menu span { display: block; width: 18px; height: 2px; background: #000c34; }
+html.is-admin .dashboard-intro { max-width: 46rem; line-height: 1.7; color: #3c4b66; }
+html.is-admin .dashboard-intro b { color: #000c34; }
+
+html.is-admin .dashboard-metrics { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+html.is-admin .dashboard-metrics article {
+  background: #fff;
+  border: 1px solid #e2e6ef;
+  border-radius: 12px;
+  padding: 16px 16px 18px;
+  min-height: 112px;
+}
+html.is-admin .dashboard-metrics span { color: #3c4b66; font-size: 13px; font-weight: 700; }
+html.is-admin .dashboard-metrics strong {
+  color: #000c34;
+  font-size: clamp(26px, 3vw, 36px);
+  letter-spacing: -0.03em;
+  margin-top: 12px;
+}
+
+html.is-admin .dashboard-table,
+html.is-admin .workspace-section,
+html.is-admin .dashboard-team {
+  background: #fff;
+  border: 1px solid #e2e6ef;
+  border-radius: 14px;
+  box-shadow: none;
+}
+html.is-admin .dashboard-table { padding: 8px 18px 12px; margin-top: 16px; }
+html.is-admin .dashboard-table h2,
+html.is-admin .workspace-heading h2,
+html.is-admin .dashboard-team-heading h2 { letter-spacing: -0.03em; }
+html.is-admin .dashboard-table ul { list-style: none; margin: 0; padding: 0; }
+html.is-admin .dashboard-table li {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+  gap: 10px 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid #e8edf4;
+  font-size: 14px;
+}
+html.is-admin .dashboard-table li span:last-child { display: inline; }
+
+html.is-admin .status-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #eef1ff;
+  color: #14206b;
+  font-size: 12px;
+  font-weight: 700;
+  width: max-content;
+}
+html.is-admin .status-won,
+html.is-admin .status-launched { background: #e5f6ef; color: #0d6b45; }
+html.is-admin .status-lost,
+html.is-admin .status-on_hold { background: #fdecef; color: #8d2436; }
+html.is-admin .status-new,
+html.is-admin .status-discovery { background: #e7ecff; color: #0000c2; }
+
+html.is-admin .workspace-section { margin-top: 22px; scroll-margin-top: 84px; }
+html.is-admin .workspace-heading { align-items: flex-start; background: #fff; }
+html.is-admin .workspace-heading h2 { font-size: 26px; margin: 4px 0; }
+html.is-admin .workspace-heading > strong { font-size: 22px; color: #0000ff; white-space: nowrap; }
+html.is-admin .workspace-row { align-items: flex-start; }
+html.is-admin .workspace-row b { font-size: 16px; }
+html.is-admin .workspace-empty {
+  margin: 0;
+  padding: 22px 4px 26px;
+  color: #3c4b66;
+  background: transparent;
+}
+html.is-admin .workspace-form-actions .button { border-radius: 8px; }
+html.is-admin .positive { color: #0d6b45; }
+html.is-admin .negative { color: #8d2436; }
+html.is-admin .dashboard-team { margin-top: 22px; padding: 8px 8px 20px; }
+html.is-admin .team-list li em { font-style: normal; color: #0000ff; font-weight: 700; }
+
+html.is-admin :focus-visible { outline: 3px solid #5c74ff; outline-offset: 3px; }
+
+@media (max-width: 900px) {
+  html.is-admin .dashboard-shell { display: block; }
+  html.is-admin .dashboard-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: min(320px, 88vw);
+    height: 100dvh;
+    min-height: 0;
+    z-index: 40;
+    transform: translateX(110%);
+    box-shadow: none;
+    transition: transform .2s ease;
+  }
+  html.is-admin .dashboard-nav.is-open { transform: none; box-shadow: -16px 0 40px rgba(0, 12, 52, 0.18); }
+  html.is-admin .admin-menu { display: inline-flex; flex: none; }
+  html.is-admin .dashboard-top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    align-items: center;
+    background: #f4f1ea;
+    padding-top: 12px;
+  }
+  html.is-admin .dashboard-main { padding: 0 16px 88px; }
+  html.is-admin .dashboard-table li,
+  html.is-admin .workspace-row { grid-template-columns: 1fr; }
+  html.is-admin .dashboard-metrics { grid-template-columns: 1fr 1fr; }
+  html.is-admin .login-shell { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  html.is-admin .dashboard-metrics { grid-template-columns: 1fr; }
+  html.is-admin .dashboard-top { align-items: flex-start; }
+  html.is-admin .dashboard-top .line-link { font-size: 13px; }
+  html.is-admin .invite-form,
+  html.is-admin .workspace-form-grid,
+  html.is-admin .team-list { grid-template-columns: 1fr; }
+  html.is-admin .workspace-form-actions .button,
+  html.is-admin .invite-form .button { width: 100%; }
+}
+
+html.is-admin .callback-copy { white-space: pre-wrap; margin: 8px 0 0; color: #3c4b66; font-size: 14px; line-height: 1.65; }
+html.is-admin .callback-disclaimer { margin: 0; padding: 0 30px 4px; color: #3c4b66; font-size: 13px; line-height: 1.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-admin .dashboard-nav { transition: none; }
+}
