@@ -1,3 +1,21 @@
+
+/* PAGES_BASE_PATCH */
+const PAGES_BASE = "/devskyline-home-preview-20261109";
+function normalizePath(pathname) {
+  let path = pathname.replace(/\/$/, "") || "/";
+  if (path === PAGES_BASE) return "/";
+  if (path.startsWith(PAGES_BASE + "/")) {
+    path = path.slice(PAGES_BASE.length) || "/";
+  }
+  return path || "/";
+}
+function withBase(href) {
+  if (!href || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("#") || href.startsWith("//")) return href;
+  if (href.startsWith(PAGES_BASE)) return href;
+  if (href.startsWith("/")) return PAGES_BASE + href;
+  return href;
+}
+const __render_orig_marker = true;
 // src/site/i18n.js
 var english = {
   "\u05D3\u05E3 \u05D4\u05D1\u05D9\u05EA": "Home",
@@ -888,7 +906,7 @@ function pageFor(path) {
   return notFoundPage(language);
 }
 function render() {
-  const path = location.pathname.replace(/\/$/, "") || "/";
+  const path = normalizePath(location.pathname);
   app.innerHTML = pageFor(path);
   translatePage(language, document);
   applyMeta(path);
@@ -928,6 +946,12 @@ function applyMeta(path) {
   document.querySelector('meta[property="og:url"]')?.setAttribute("content", url);
 }
 function bind() {
+
+  document.querySelectorAll("a[href]").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (!href || href.startsWith("mailto:") || href.startsWith("#") || href.startsWith("http")) return;
+    if (href.startsWith("/") && !href.startsWith(PAGES_BASE)) a.setAttribute("href", withBase(href));
+  });
   motionObserver?.disconnect();
   document.documentElement.classList.remove("reveal-ready");
   document.body.classList.remove("nav-open");
