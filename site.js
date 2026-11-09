@@ -952,6 +952,15 @@ function bind() {
     if (!href || href.startsWith("mailto:") || href.startsWith("#") || href.startsWith("http")) return;
     if (href.startsWith("/") && !href.startsWith(PAGES_BASE)) a.setAttribute("href", withBase(href));
   });
+  document.querySelectorAll("img[src], source[src], link[href], script[src]").forEach((el) => {
+    const attr = el.hasAttribute("src") ? "src" : "href";
+    const val = el.getAttribute(attr);
+    if (!val || val.startsWith("http") || val.startsWith("data:") || val.startsWith(PAGES_BASE)) return;
+    if (val.startsWith("/")) el.setAttribute(attr, withBase(val));
+  });
+  document.querySelectorAll("[style*=url(/)]").forEach((el) => {
+    el.setAttribute("style", el.getAttribute("style").replace(/url\((['\"]?)\//g, `url($1${PAGES_BASE}/`));
+  });
   motionObserver?.disconnect();
   document.documentElement.classList.remove("reveal-ready");
   document.body.classList.remove("nav-open");
